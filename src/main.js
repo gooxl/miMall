@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import env from './env'
+import App from './App.vue'
 
 //baseURL根据跨域方式调整，如不使用代理，写完整地址"http://..."
 axios.defaults.baseURL="/api";
@@ -22,14 +22,15 @@ axios.interceptors.response.use(function(response){
   if(res.status==0){ //如果状态码为0代表成功，返回返回值
     return res.data  
   }else if(res.status==10){ //如10为未登录，跳转至登录页
-    window.location.href='/#/login' //不能使用路由跳转，因为main.js不在App.vue中，this不指向Vue。hash路由带上#
+    //不能使用路由跳转，因为main.js不在App.vue中，this不指向Vue。hash路由带上#
+    window.location.href='/#/login' 
   }else{ //否则报错，将错误信息弹出
     alert(res.msg)
   }
 })
 
 Vue.use(VueAxios,axios)
-Vue.config.productionTip = false
+Vue.config.productionTip = false //设为true后有一些vue底层信息打印出来
 
 new Vue({
   router,
