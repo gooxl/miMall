@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Index from '../views/index.vue'
+import Login from '../views/login.vue'
 import Product from '../views/product.vue'
 import Detail from '../views/detail.vue'
 import Cart from '../views/cart.vue'
@@ -30,6 +31,7 @@ const routes = [
     ]
   },
   {path:'/cart',name:'cart',component:Cart},
+  {path:'/login',name:'login',component:Login},
 ]
 
 const router = new VueRouter({

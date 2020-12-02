@@ -4,34 +4,38 @@
   </div>
 </template>
 <script>
-import storage from './storage'
 export default {
-  mounted(){
+  name:'app',
+  data(){
+    return{
 
-  }
+    }
+  },
+  mounted(){
+    this.getUser();
+    this.getCartCount();
+  },
+  methods:{
+    getUser(){
+      this.axios.get('/user').then((res={})=>{
+        console.log(res)
+        this.$store.dispatch('saveUserName',res.username)
+      })
+    },
+    getCartCount(){
+      this.axios.get('/carts/products/sum').then((res=0)=>{
+        this.$store.dispatch('saveCartCount',res)
+      })
+    }
+  },  
 }
 </script> 
 
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style lang="scss">
+@import './assets/scss/reset.scss';
+@import './assets/scss/config.scss';
+@import './assets/scss/button.scss';
 
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
