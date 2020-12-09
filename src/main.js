@@ -5,8 +5,11 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
+import {Message} from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import env from './env'
 import App from './App.vue'
+
 
 /*使用mock.js生成模拟数据*/
 const mock=false; //mock开关
@@ -38,11 +41,11 @@ axios.interceptors.response.use(function(response){
     //不能使用路由跳转，因为main.js不在App.vue中，this不指向Vue。hash路由带上#
 
     // window.location.href='/#/login' 
-    return Promise.reject(res)
+    return Promise.reject(res)  //通过promise抛出错误信息
   
   }else{ //否则报错，将错误信息弹出
-    alert(res.msg);
-    return Promise.reject(res)  //通过promise抛出错误
+    this.$message.warning(res.msg)
+    return Promise.reject(res)  //通过promise抛出错误信息
 
   }
 })
@@ -53,6 +56,7 @@ Vue.use(VueLazyLoad,{
   // 设定图片懒加载的loading效果图
   loading:'/imgs/loading-svg/loading-bars.svg'
 })
+Vue.prototype.$message=Message;
 Vue.config.productionTip = false //设为true后有一些vue底层信息打印出来
 
 // 价格过滤器

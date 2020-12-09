@@ -96,7 +96,6 @@ export default {
     closeVideo(){
       this.showSlide=false;
       let video=this.$refs.video;
-      
     } 
   },
   mounted(){

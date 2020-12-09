@@ -12,8 +12,11 @@ export default {
     }
   },
   mounted(){
-    this.getUser();
-    this.getCartCount();
+    if(this.$cookie.get('usreId')){ //如果有userId才获取用户名和购物车数量
+      this.getUser();
+      this.getCartCount();
+    }
+
   },
   methods:{
     getUser(){

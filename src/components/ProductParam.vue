@@ -10,7 +10,6 @@
         <slot name="buy"></slot>
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -41,7 +40,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss">
 @import '@/assets/scss/mixin.scss';
 @import '@/assets/scss/config.scss';

@@ -5,7 +5,7 @@
     <!-- 商品详情 -->
     <div class="wrapper">
       <div class="container">
-        <!-- 左 -->
+        <!-- 左轮播 -->
         <div class="swiper">
           <swiper :options="swiperOption">
             <swiper-slide><img src="/imgs/detail/phone-1.jpg" alt=""></swiper-slide>
@@ -16,7 +16,7 @@
             <div class="swiper-pagination" slot='pagination'></div>
           </swiper>
         </div>
-        <!-- 右 -->
+        <!-- 右商品信息 -->
         <div class="content">
           <h2 class="title">{{product.name}}</h2>
           <p class="info">相机全新升级 / 960帧超慢动作 / 手持超级夜景 / 全球首款双频GPS / 骁龙845处理器 / 红

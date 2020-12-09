@@ -61,11 +61,16 @@ export default {
         username,
         password
       }).then(res=>{
-        //使用vue-cookie将userId保存到cookie，有交期1个月()
-        this.$cookie.set('userId',res.id,{expires:'1M'})
+        //使用vue-cookie将userId保存到cookie，有效期
+        this.$cookie.set('userId',res.id,{expires:'Session'})
         //通过dispatch派发vuex中定义的方法
         this.$store.dispatch('saveUserName',res.username) //将请求得来的username传入vuex
-        this.$router.push('/')
+        this.$router.push({
+          name:'index',
+          params:{
+            from:'login'
+          }
+        })
       })
     },
 
@@ -75,7 +80,7 @@ export default {
         password:'123',
         email:'gu@qq.com'
       }).then(res=>{
-        alert('注册成功');
+        this.$message.success('注册成功');
       })
     }
   }
