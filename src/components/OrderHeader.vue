@@ -3,7 +3,7 @@
   <div class="order-header">
     <div class="container clearfix">
       <!-- 左logo -->
-      <div class="header-logo ">
+      <div class="header-logo">
         <a href="/"></a>
       </div>
       <div class="title">
@@ -45,7 +45,7 @@ export default {
       font-size: 20px;
       float:left;
       color:#333;
-      margin-left:54px;
+      padding-left:54px;
       span{
         font-size:14px;
         margin-left:17px;
@@ -55,6 +55,7 @@ export default {
     }
     .username{
       float:right;
+      margin-right:50px;
       a{
         color:#666;
         font-size:16px;

@@ -31,11 +31,11 @@
     </div>
     <div class="footer">
       <div class="footer-link">
-        <a href="https://www.imooc.com/u/1343480" target="_blank">简体</a><span>|</span>
-        <a href="https://www.imooc.com/u/1343480" target="_blank">繁体</a><span>|</span>
-        <a href="https://coding.imooc.com/class/113.html" target="_blank">English</a><span>|</span>
-        <a href="https://coding.imooc.com/class/236.html" target="_blank">FAQ</a><span>|</span>
-        <a href="https://coding.imooc.com/class/343.html" target="_blank">Privacy Policy</a>
+        <a href="javascript:;" target="_blank">简体</a><span>|</span>
+        <a href="javascript:;" target="_blank">繁体</a><span>|</span>
+        <a href="javascript:;" target="_blank">English</a><span>|</span>
+        <a href="javascript:;" target="_blank">FAQ</a><span>|</span>
+        <a href="javascript:;" target="_blank">Privacy Policy</a>
       </div>
       <p class="copyright">Copyright ©2019 mi.futurefe.com All Rights Reserved.</p>
     </div>
@@ -87,7 +87,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .login{
   .container{
     height:113px;

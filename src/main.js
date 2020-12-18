@@ -7,7 +7,7 @@ import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
 import {Message} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import env from './env'
+import '@/assets/scss/element-variables.scss'
 import App from './App.vue'
 
 
@@ -30,7 +30,7 @@ axios.defaults.timeout=80000;
 
 /*axios拦截器 */
 //接口错误拦截
-axios.interceptors.response.use(function(response){ 
+axios.interceptors.response.use(function(response){//第一个参数拦截业务状态
   // 所有返回值都会经过response，responst.data才是返回值内容
   let res=response.data;
   let path=location.hash;
@@ -39,15 +39,16 @@ axios.interceptors.response.use(function(response){
     return res.data  
   }else if(res.status==10){ //如10为未登录，跳转至登录页
     //不能使用路由跳转，因为main.js不在App.vue中，this不指向Vue。hash路由带上#
-
-    // window.location.href='/#/login' 
+    window.location.href='/#/login' 
     return Promise.reject(res)  //通过promise抛出错误信息
-  
   }else{ //否则报错，将错误信息弹出
-    this.$message.warning(res.msg)
+    Message.warning(res.msg)
     return Promise.reject(res)  //通过promise抛出错误信息
-
   }
+},(error)=>{//第二个参数拦截http请求状态
+  let res=error.response; 
+  Message.error(res.data.message)
+  return Promise.reject(error)
 })
 
 Vue.use(VueAxios,axios)

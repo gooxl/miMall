@@ -22,10 +22,9 @@
     background:$colorG;
     transform:translate(-50%,50%);
     .modal-header{
-      height: 60px;
+      @include height(60px);
       background:$colorJ;
       padding:0 25px;
-      line-height:60px;
       font-size: $fontI;
       .icon-close{
         @include positionImg(absolute,23px,25px,14px,14px,'/imgs/icon-close.png');
@@ -40,8 +39,7 @@
       font-size: 14px;
     }
     .modal-footer{
-      height: 82px;
-      line-height:82px;
+      @include height(82px);
       text-align: center;
       background-color:$colorJ;
     }

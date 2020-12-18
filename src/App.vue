@@ -12,7 +12,7 @@ export default {
     }
   },
   mounted(){
-    if(this.$cookie.get('usreId')){ //如果有userId才获取用户名和购物车数量
+    if(this.$cookie.get('userId')){ //如果有userId才获取用户名和购物车数量
       this.getUser();
       this.getCartCount();
     }

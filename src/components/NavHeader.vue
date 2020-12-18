@@ -28,7 +28,10 @@
       <div class="container">
         <!-- 左logo -->
         <div class="header-logo">
-          <a href="/"></a>
+          <a href="/#/index"></a>
+        </div>
+        <div class="header-logo2">
+          <a href="javascript:;"></a>
         </div>
         <!-- 中menu -->
         <div class="header-menu">
@@ -185,8 +188,7 @@ export default {
   .header{
     //  topbar
     .nav-topbar{
-      height: 39px;
-      line-height: 39px;
+      @include height(39px);
       background-color:$colorB;
       color:#b0b0b0;
       .container{
@@ -214,11 +216,20 @@ export default {
         position: relative;
         height: 112px;
         @include flex();
-
+        .header-logo2{
+          padding-left:20px;
+          display:inline-block;
+          a{
+            display:inline-block;
+            width:165px;
+            height:55px;
+            background:url('/imgs/mi1212.jpg')
+          }
+        }
         .header-menu{
           display:inline-block;
           width: 643px;
-          padding-left:209px;
+          padding-left:25px;
           .item-menu{
             display:inline-block;
             color:$colorB;

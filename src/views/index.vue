@@ -112,7 +112,7 @@
 import ServiceBar from "@/components/ServiceBar"
 import Modal from "@/components/Modal"
 import { swiper,swiperSlide} from 'vue-awesome-swiper'//注意:swiper6要大写
-import 'swiper/dist/css/swiper.css' //引入swiper样式文件
+import 'swiper/swiper-bundle.css' //引入swiper样式文件
 
 export default {
   name: 'index',

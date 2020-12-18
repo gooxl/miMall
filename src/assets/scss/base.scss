@@ -32,25 +32,27 @@ input{
 // 头部组件logo样式
 .header-logo{
   display: inline-block;
-  width: 55px;
-  height: 55px;
+  width: 55px;  //图标显示宽高
+  height:55px;
   background-color:#ff6600;
   a{
     display:inline-block;
-    width:110px;
+    width:110px; //a标签宽度为图标显示的一倍（两个图标拼放）
     height:55px;
     &:before{ //鼠标移入图标前
       content:' ';  //为动态切换显示的图片占位
-      @include bgImg(55px,55px,'/imgs/mi-logo.png',55px);
-      transition:margin .3s   //margin以0.3s过渡
+      display: inline-block;
+      @include bgImg(55px,55px,'/imgs/mi-logo.png');
+      transition:all .3s   //移出过渡
     }
     &:after{//鼠标移入图标后
       content:' ';  //为动态切换显示的图片占位
-      @include bgImg(55px,55px,'/imgs/mi-home.png',55px);
+      @include bgImg(55px,55px,'/imgs/mi-home.png');
+
     }
     &:hover:before{
       margin-left:-55px;
-      transition:margin .3s
+      transition:all .3s //移入过渡
     }
   }
 }

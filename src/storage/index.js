@@ -31,7 +31,7 @@ export default{
   },
   // 获取整个storage
   getStorage(){
-    return JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) || {})
+    return JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) || '{}')
   },
   /*清除某个值*/
   clear(key,module_name){ //key为属性，modult_name为当前对象下的某个模块
